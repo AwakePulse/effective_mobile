@@ -11,13 +11,42 @@
 
 ---
 
+## Требования
+* Node.js >= 18.00
+* PostgreSQL установлен и запущен
+* Настроен .env файл с данными подключения к БД
+
+---
+
+## Пример .env-файла
+#### PORT | *порт для запуска приложения*
+
+#### DB_USER | *пользователь postgres*
+#### DB_HOST | *сеть использования postgres*
+#### DB_NAME | *название базы данных*
+#### DB_PASSWORD | *пароль от базы данных*
+#### DB_PORT | *порт базы данных*
+
+---
+
 ## Установка.
-```
+```bash
 npm install # Скачать зависимости в node-modules
 npx tsc # Скомпилировать проект из TypeScript в JavaScript
 npm start # Запустить production версию приложения
 ```
 
+---
+
+## Routers
+### Api, через который идёт доступ 
+    - /effective_mobile
+### Endpoints
+    - get('/users' -> получить всех пользователей);
+    - post('/registration' -> зарегистрировать пользователя);
+    - post('/login' -> вход от лица пользователя);
+    - get('/user/:id' -> получить пользователя по id);
+    - put('/user/:id' -> заблокировать пользователя);
 ---
 
 ## Краткое описание каждой из реализованных функций.
@@ -51,3 +80,23 @@ npm start # Запустить production версию приложения
 5. ### jwt
 6. ### ts-node-dev
 7. ### express-validator
+
+## Иерархия папкок:
+```
+/src
+  | controllers
+    |- user.controller
+  | routers
+    |- user.routers
+  | db
+    |- db // Файл конфигурации postgres
+    |- init // Файл создания таблицы
+  | middleware
+    |- adminMiddleware
+    |- authMiddleware
+  | config
+    |- config
+  | types
+    |- express
+      |- index.d.ts
+```
