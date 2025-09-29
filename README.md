@@ -31,15 +31,20 @@
 
 ## Установка.
 ```bash
-npm install # Скачать зависимости в node-modules
-npx tsc # Скомпилировать проект из TypeScript в JavaScript
-npm start # Запустить production версию приложения
+# Установка зависимостей
+npm install
+
+# Компиляция TypeScript в JavaScript
+npx tsc
+
+# Запуск production-версии приложения
+npm start
 ```
 
 ---
 
 ## Routers
-### Api, через который идёт доступ 
+### Api, через который идёт доступ (Базовый путь) 
     - /effective_mobile
 ### Endpoints
     - get('/users' -> получить всех пользователей);
@@ -80,8 +85,9 @@ npm start # Запустить production версию приложения
 5. ### jwt
 6. ### ts-node-dev
 7. ### express-validator
+8. ### dotenv
 
-## Иерархия папкок:
+## Иерархия папкок.
 ```
 /src
   | controllers
